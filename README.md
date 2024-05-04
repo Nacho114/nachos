@@ -39,6 +39,17 @@ sudo nixos-rebuild boot --flake .
 ```
 From [here](https://www.reddit.com/r/NixOS/comments/10107km/how_to_delete_old_generations_on_nixos/)
 
+To further optimize, I could add this to the configuration.nix
+```nix
+nix.settings.auto-optimise-store = true;
+nix.gc = {
+  automatic = true;
+  dates = "weekly";
+  options = "-d";
+  persistent = true;
+};
+```
+
 ## FAQ
 
 Some general things to check
