@@ -2,6 +2,8 @@
 
 Make sure to add any new files to git!
 
+Here are bunch of useful commands and faq of common issues!
+
 ## Upgrade
 
 Note, when running `switch`, this will build the system based on the latest
@@ -24,6 +26,8 @@ home-manager switch --flake .
 
 ## Clean
 
+These are already automated inside the configuration.nix!
+
 Garbage collect
 ```shell
 nix-collect-garbage
@@ -36,18 +40,6 @@ sudo nix-collect-garbage --delete-older-than 4d
 Update the login generation options, note the use of `boot`
 ```shell
 sudo nixos-rebuild boot --flake .
-```
-From [here](https://www.reddit.com/r/NixOS/comments/10107km/how_to_delete_old_generations_on_nixos/)
-
-To further optimize, I could add this to the configuration.nix
-```nix
-nix.settings.auto-optimise-store = true;
-nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "-d";
-  persistent = true;
-};
 ```
 
 ## FAQ

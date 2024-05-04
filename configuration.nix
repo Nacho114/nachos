@@ -131,5 +131,15 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  # Garbage automation, from:
+  # https://nixos.wiki/wiki/Storage_optimization
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  # store automation, from same link
+  nix.settings.auto-optimise-store = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
