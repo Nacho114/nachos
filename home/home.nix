@@ -6,6 +6,7 @@
     ./dev.nix
     ./foot.nix
     ./wm-utils.nix
+    ./nix-your-shell.nix
   ];
 
   # Required for megasync
