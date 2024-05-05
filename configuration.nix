@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./vm/sway.nix
-      ./vm/utils.nix
-      ./apps.nix
     ];
 
   # Bootloader.
@@ -19,6 +16,7 @@
 
   boot.initrd.luks.devices."luks-c16a5d38-c8ba-4a77-a9bb-15b4d3e289a3".device = "/dev/disk/by-uuid/c16a5d38-c8ba-4a77-a9bb-15b4d3e289a3";
 
+  # shell
   programs.fish.enable = true; 
   users.defaultUserShell = pkgs.fish;
 
@@ -140,6 +138,15 @@
   };
   # store automation, from same link
   nix.settings.auto-optimise-store = true;
+
+  # window manager
+  programs.sway.enable = true;
+  # I added these for getting gpg to work! -- maybe redundant
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

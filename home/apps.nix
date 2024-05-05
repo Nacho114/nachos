@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  users.users.nacho.packages = with pkgs; [
+  home.packages = with pkgs; [
     firefox
     megasync
     # specific to gnome
