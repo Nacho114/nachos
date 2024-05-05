@@ -139,7 +139,7 @@
   # store automation, from same link
   nix.settings.auto-optimise-store = true;
 
-  # window manager
+  # window manager, needs to be added here, so no need to also add in home-manager
   programs.sway.enable = true;
   # I added these for getting gpg to work! -- maybe redundant
   services.pcscd.enable = true;

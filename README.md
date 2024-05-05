@@ -4,6 +4,16 @@ Make sure to add any new files to git!
 
 Here are bunch of useful commands and faq of common issues!
 
+## Structure
+
+- Flake: This keeps track of a lock file to pin all versions
+- Home-manager: This is to manage all things related to user, dev env, apps, ...
+
+This structure makes it easy to
+
+1. Pin changes and updates
+2. Keep apps and dev env at the user level
+
 ## Upgrade
 
 Note, when running `switch`, this will build the system based on the latest
