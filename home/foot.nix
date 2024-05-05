@@ -1,5 +1,5 @@
 { ... }:
-
+# NOTE! This is the only config that is not managed by chezmoi.
 {
   programs.foot = {
     enable = true;

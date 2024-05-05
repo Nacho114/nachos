@@ -1,16 +1,17 @@
 { pkgs, ... }:
 
+# All the dev tools that I use inside the terminal 
 {
   home.packages = with pkgs; [
+
     # dotfile manager
     chezmoi
-
-    trash-cli
 
     # git
     delta
     
     # general utilities
+    trash-cli
     wl-clipboard
     tmux
     tldr
@@ -26,10 +27,11 @@
     zoxide
 
     # neovim dependency
+    neovim
     gcc
     cargo
     luarocks
     nodejs_21
-    neovim
+
   ];
 }
