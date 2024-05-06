@@ -84,11 +84,18 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Docker
+  virtualisation.docker.enable = false; # Might need true for extra priv.
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nacho = {
     isNormalUser = true;
     description = "nacho";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
   };
 
   # Allow unfree packages
