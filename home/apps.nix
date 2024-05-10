@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     firefox
+    calibre
+    brave
     megasync # this needs unfree setting to be set
     # specific to gnome
     gnome3.gnome-tweaks
