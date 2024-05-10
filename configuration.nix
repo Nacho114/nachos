@@ -20,6 +20,9 @@
   programs.fish.enable = true; 
   users.defaultUserShell = pkgs.fish;
 
+  # Set time zone automatically
+  services.automatic-timezoned.enable = true;
+
   networking.hostName = "nachos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -30,8 +33,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/Argentina/Buenos_Aires";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
