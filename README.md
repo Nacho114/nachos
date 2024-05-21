@@ -62,3 +62,11 @@ Some general things to check
 
 Make sure yo reboot before, you should not have logged out of GNOME.
 
+### LSP server
+
+Mason in nvim does not work well with Nix since some of the LSP's are pre-compiled binaries. [Info explained here](https://blog.thalheim.io/2022/12/31/nix-ld-a-clean-solution-for-issues-with-pre-compiled-executables-on-nixos/)
+
+A way around this is to:
+
+1. Add the LSP manually in home manager, e.g. dev.md
+2. Add it to [lsp-zero](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)

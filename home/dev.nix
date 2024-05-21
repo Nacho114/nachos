@@ -32,6 +32,8 @@
     cargo
     luarocks
     nodejs_21
+    # installing lsp via nix
+    marksman
 
   ];
 }
