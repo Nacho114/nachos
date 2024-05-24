@@ -156,5 +156,18 @@
     enableSSHSupport = true;
   };
 
+  # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Fix for wifi not connecting at public wifi login
+  # Fix for captive portal (public wifi login, e.g., hotel) not working. 
+  # https://www.reddit.com/r/NixOS/comments/zxkfvv/nixos_tip_some_wifi_hot_spot_doesnt_work_due_to/
+  # the issue is that dnsExtensionMechanism provides more security 
+  # uncomment this line:
+  # networking.resolvconf.dnsExtensionMechanism = false;
+  # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
