@@ -31,7 +31,7 @@
     gcc
     cargo
     luarocks
-    nodejs_21
+    nodejs_22
     # installing lsp via nix
     marksman
 
