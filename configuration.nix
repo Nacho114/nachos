@@ -164,7 +164,7 @@
   # https://www.reddit.com/r/NixOS/comments/zxkfvv/nixos_tip_some_wifi_hot_spot_doesnt_work_due_to/
   # the issue is that dnsExtensionMechanism provides more security 
   # uncomment this line:
-  # networking.resolvconf.dnsExtensionMechanism = false;
+  networking.resolvconf.dnsExtensionMechanism = false;
   # ---------------------------------------------------------------------------
   # ---------------------------------------------------------------------------
   # ---------------------------------------------------------------------------
