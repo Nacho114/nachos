@@ -135,6 +135,8 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  # !!!! This stays the same, to upgrade change the version in the flake file
+  # this keeps the system backward compatible, it is the original version
   system.stateVersion = "23.11"; # Did you read the comment?
 
   # Garbage automation, from:
