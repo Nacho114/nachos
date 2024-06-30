@@ -64,6 +64,12 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable autodiscovery of network printers
+  services.avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -86,7 +92,7 @@
   # services.xserver.libinput.enable = true;
 
   # Docker
-  virtualisation.docker.enable = false; # Might need true for extra priv.
+  virtualisation.docker.enable = true; # Had to set true to work properly for distrobox
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;

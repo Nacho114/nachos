@@ -22,6 +22,7 @@
     fd
     bottom
     neofetch
+    distrobox
 
     # fish dependency
     zoxide
@@ -34,6 +35,7 @@
     nodejs_22
     # installing lsp via nix
     marksman
+    tree-sitter # Maybe needed? dockerfile.so wasn't working, maybe due to this, had to uninstall and then install the so
 
   ];
 }
