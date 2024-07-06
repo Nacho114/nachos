@@ -4,7 +4,6 @@
   imports = [
     ./apps.nix
     ./dev.nix
-    ./nix-ld.nix
     ./foot.nix
     ./wm-utils.nix
     ./nix-your-shell.nix

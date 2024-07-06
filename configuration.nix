@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nix-ld.nix
     ];
 
   # Bootloader.
@@ -32,7 +33,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
