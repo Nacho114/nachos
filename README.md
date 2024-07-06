@@ -58,6 +58,12 @@ Some general things to check
 
 - make sure you added the file to git! Else the file is ignored during switch
 
+### Nix flakes /nix/store/***-source no such file or directory
+
+[some solutions](https://discourse.nixos.org/t/nix-flakes-nix-store-source-no-such-file-or-directory/17836)
+
+- do `git add` and retry
+
 ### `Original error was: libz.so.1: cannot open shared object file: No such file or directory`
 
 Nix works by building things in a declarative way to ensure everything is predictable. However some software 
