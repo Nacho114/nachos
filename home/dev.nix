@@ -43,6 +43,6 @@
     # 
     python3
     poetry
-
+    nix-index
   ];
 }
