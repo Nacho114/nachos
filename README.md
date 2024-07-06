@@ -58,6 +58,19 @@ Some general things to check
 
 - make sure you added the file to git! Else the file is ignored during switch
 
+### `Original error was: libz.so.1: cannot open shared object file: No such file or directory`
+
+Nix works by building things in a declarative way to ensure everything is predictable. However some software 
+ships with pre-compiled ejecutables that were not made for Nix. E.g. `numpy` uses some C libraries for the 
+computations. 
+
+These programs will look for a link-loader program (e.g. libz.so.1) in `/lib64/`, which is the default location
+for linked-loaders However nix stores these in the nix store!
+
+It installs a shim layer that mimics the standard link-loader path and uses NIX_LD to point to the actual loader, setting LD_LIBRARY_PATH to include required libraries specified in NIX_LD_LIBRARY_PATH.
+
+To understand more look at this [article](https://blog.thalheim.io/2022/12/31/nix-ld-a-clean-solution-for-issues-with-pre-compiled-executables-on-nixos/)
+
 ### home-manager: switch --flake .  xdg-desktop-portal-gtk.service loaded failed failed Portal service (GTK/GNOME implementation)
 
 Make sure yo reboot before, you should not have logged out of GNOME.

@@ -37,5 +37,12 @@
     marksman
     tree-sitter # Maybe needed? dockerfile.so wasn't working, maybe due to this, had to uninstall and then install the so
 
+    # New stuff I'm playing around with
+    visidata
+
+    # 
+    python3
+    poetry
+
   ];
 }
