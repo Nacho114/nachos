@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +17,7 @@
   boot.initrd.luks.devices."luks-c16a5d38-c8ba-4a77-a9bb-15b4d3e289a3".device = "/dev/disk/by-uuid/c16a5d38-c8ba-4a77-a9bb-15b4d3e289a3";
 
   # shell
-  programs.fish.enable = true; 
+  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   # Set time zone automatically
@@ -65,9 +65,9 @@
   services.printing.enable = true;
   # Enable autodiscovery of network printers
   services.avahi = {
-      enable = true;
-      nssmdns = true;
-      openFirewall = true;
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
   };
 
   # Enable sound with pipewire.
@@ -101,7 +101,11 @@
   users.users.nacho = {
     isNormalUser = true;
     description = "nacho";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   # Allow unfree packages
@@ -155,7 +159,24 @@
   nix.settings.auto-optimise-store = true;
 
   # window manager, needs to be added here, so no need to also add in home-manager
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # so that gtk works properly
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      wl-clipboard
+      wf-recorder
+      mako # notification daemon
+      grim
+      #kanshi
+      # slurp
+      # alacritty # Alacritty is the default terminal in the config
+      # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
+    ];
+
+  };
+
   # I added these for getting gpg to work! -- maybe redundant
   services.pcscd.enable = true;
   programs.gnupg.agent = {
@@ -176,5 +197,8 @@
   # ---------------------------------------------------------------------------
   # ---------------------------------------------------------------------------
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

@@ -6,6 +6,7 @@
     calibre
     brave
     megasync # this needs unfree setting to be set
+    # pdf
     zathura
     pdfarranger
     xournalpp
