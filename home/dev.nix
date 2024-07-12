@@ -9,13 +9,13 @@
 
     # git
     delta
-    
+
     # general utilities
     trash-cli
     wl-clipboard
     tmux
     tldr
-    bat 
+    bat
     tree
     fzf
     ripgrep
@@ -39,10 +39,13 @@
 
     # New stuff I'm playing around with
     visidata
-
-    # 
     python3
     poetry
     nix-index
+    direnv
+    zellij
+
+    # ls but for images, needs SIXEL compatibility, e.g. foot
+    lsix
   ];
 }

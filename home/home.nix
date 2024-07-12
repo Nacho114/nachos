@@ -7,6 +7,7 @@
     ./foot.nix
     ./wm-utils.nix
     ./nix-your-shell.nix
+    ./theme-for-sway.nix #
   ];
 
   # Required for megasync
