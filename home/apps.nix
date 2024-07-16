@@ -14,5 +14,7 @@
     gnome3.gnome-tweaks
     gnomeExtensions.pop-shell
     gnomeExtensions.just-perfection
+    # misc
+    teams
   ];
 }

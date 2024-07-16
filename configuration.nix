@@ -105,6 +105,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "video" # needed for sway controls
     ];
   };
 
@@ -169,13 +170,17 @@
       wf-recorder
       mako # notification daemon
       grim
+      xfce.thunar
       #kanshi
       # slurp
       # alacritty # Alacritty is the default terminal in the config
       # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
     ];
 
+
   };
+
+  programs.light.enable = true;
 
   # I added these for getting gpg to work! -- maybe redundant
   services.pcscd.enable = true;
