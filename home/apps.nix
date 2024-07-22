@@ -6,6 +6,7 @@
     calibre
     brave
     megasync # this needs unfree setting to be set
+    transmission-gtk #torrent client
     # pdf
     zathura
     pdfarranger
@@ -14,7 +15,5 @@
     gnome3.gnome-tweaks
     gnomeExtensions.pop-shell
     gnomeExtensions.just-perfection
-    # misc
-    teams
   ];
 }

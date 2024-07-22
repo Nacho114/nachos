@@ -89,3 +89,9 @@ A way around this is to:
 
 1. Add the LSP manually in home manager, e.g. dev.md
 2. Add it to [lsp-zero](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+
+### Cursor is gone and turns into white rectangle
+
+- `dconf reset /org/gnome/desktop/interface/cursor-theme`
+
+From `https://github.com/NixOS/nixpkgs/issues/140505`
