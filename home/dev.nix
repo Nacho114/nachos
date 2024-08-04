@@ -50,5 +50,7 @@
 
     # term file manager
     xplr
+    nnn
+    lf
   ];
 }

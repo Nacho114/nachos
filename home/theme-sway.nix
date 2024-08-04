@@ -1,41 +1,34 @@
-{ pkgs, ... }:
-
+{ config, pkgs, ... }:
 {
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+	gtk-theme = "Adwaita-dark";
+	color-scheme = "prefer-dark";
+      };
+    };
+  };
 
   gtk = {
     enable = true;
     theme = {
-      name = "Breeze-Dark";
-      package = pkgs.libsForQt5.breeze-gtk;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
-    };
-    cursorTheme = {
-      name = "Catppuccin-Mocha-Light-Cursors";
-      package = pkgs.catppuccin-cursors.mochaLight;
-    };
-    gtk3 = {
-      extraConfig.gtk-application-prefer-dark-theme = true;
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
   };
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "Catppuccin-Mocha-Light-Cursors";
-    package = pkgs.catppuccin-cursors.mochaLight;
-    size = 16;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Breeze-Dark";
-      color-scheme = "prefer-dark";
+  qt = {
+    enable = true;
+    platformTheme.name = "Adwaita-dark";
+    style = {
+      name = "Adwaita-dark";
+      package = pkgs.adwaita-qt;
     };
   };
 
+  xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      configPackages = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
 }
