@@ -47,5 +47,8 @@
 
     # ls but for images, needs SIXEL compatibility, e.g. foot
     lsix
+
+    # term file manager
+    xplr
   ];
 }
