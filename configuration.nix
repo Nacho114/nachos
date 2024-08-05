@@ -173,8 +173,9 @@
       grim
       xfce.thunar
       acpi
-      shotman
+      grim
       slurp # needed for shotman
+      playerctl # control music
     ];
 
   };
