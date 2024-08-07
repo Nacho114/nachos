@@ -5,7 +5,6 @@
     ./apps.nix
     ./dev.nix
     ./foot.nix
-    ./wm-utils.nix
     ./nix-your-shell.nix
     ./theme-sway.nix
   ];

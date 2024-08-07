@@ -169,13 +169,15 @@
       autotiling
       wl-clipboard
       wf-recorder
-      mako # notification daemon
+      dunst # notification daemon
       grim
       xfce.thunar
       acpi
       grim
-      slurp # needed for shotman
+      slurp # needed for grim
       playerctl # control music
+      pulseaudio # audio control
+      pavucontrol # audio control
     ];
 
   };
@@ -189,20 +191,20 @@
     enableSSHSupport = true;
   };
 
-  programs.nix-ld.enable = true;
-
-  # Sets up all the libraries to load
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
-    openssl
-    curl
-    expat
-    # ...
-  ];
+  # programs.nix-ld.enable = true;
+  #
+  # # Sets up all the libraries to load
+  # programs.nix-ld.libraries = with pkgs; [
+  #   stdenv.cc.cc
+  #   zlib
+  #   fuse3
+  #   icu
+  #   nss
+  #   openssl
+  #   curl
+  #   expat
+  #   # ...
+  # ];
 
   # ---------------------------------------------------------------------------
   # ---------------------------------------------------------------------------
