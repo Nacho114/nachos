@@ -166,6 +166,7 @@
     extraPackages = with pkgs; [
       swaylock
       swayidle
+      wofi
       autotiling
       wl-clipboard
       wf-recorder
